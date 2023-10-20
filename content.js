@@ -1,27 +1,29 @@
-// Fonction pour vérifier et supprimer l'élément
-function supprimerElementAutomatiquement() {
-    var elementASupprimer = document.querySelector('ytd-enforcement-message-view-model');
-    var elementASupprimer2 = document.querySelector('tp-yt-iron-overlay-backdrop');
+function replay() {
     var videoPlayer = document.querySelector('video');
+    if (videoPlayer) {
+        videoPlayer.play();
+    } else {
+        console.log("Aucun lecteur vidéo trouvé sur la page.");
+    }
+}
+
+function deletePopup(element) {
+    var elementASupprimer = document.querySelector('ytd-enforcement-message-view-model');
     if (elementASupprimer) {
         elementASupprimer.remove();
         console.log('AH AHHHHHHH !');
-        if (videoPlayer) {
-            videoPlayer.play();
-        } else {
-            console.log("Aucun lecteur vidéo trouvé sur la page.");
-        }
+        replay();
     }
-    if (elementASupprimer2) {
-        elementASupprimer2.remove();
-        console.log('AH AHHHHHHH !');
-        if (videoPlayer) {
-            videoPlayer.play();
-        } else {
-            console.log("Aucun lecteur vidéo trouvé sur la page.");
-        }
-    }
-    console.log('RIEN A BLOQUE');
+}
+
+// Fonction pour vérifier et supprimer l'élément
+function supprimerElementAutomatiquement() {
+    // AD BLOCKER
+    deletePopup("ytd-enforcement-message-view-model");
+    deletePopup("tp-yt-iron-overlay-backdrop");
+
+    // USER PRESENCE
+    deletePopup("tp-yt - paper - dialog");
 }
 
 // Vérifier et supprimer l'élément toutes les 1 seconde (ajustable)
