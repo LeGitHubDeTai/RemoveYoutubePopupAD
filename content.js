@@ -23,6 +23,7 @@ function supprimerElementAutomatiquement() {
     deletePopup("tp-yt-iron-overlay-backdrop");
 
     // USER PRESENCE
+    deletePopup("yt-confirm-dialog-renderer");
     deletePopup("tp-yt - paper - dialog");
 }
 
