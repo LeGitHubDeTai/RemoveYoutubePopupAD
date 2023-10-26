@@ -8,7 +8,7 @@ function replay() {
 }
 
 function deletePopup(element) {
-    var elementASupprimer = document.querySelector('ytd-enforcement-message-view-model');
+    var elementASupprimer = document.querySelector(element);
     if (elementASupprimer) {
         elementASupprimer.remove();
         console.log('AH AHHHHHHH !');
