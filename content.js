@@ -24,8 +24,12 @@ function deletePopup(element) {
     }
 }
 
-// Fonction pour vérifier et supprimer l'élément
-function supprimerElementAutomatiquement() {
+function removeClass(element, classname) {
+    const div = document.querySelector(element);
+    div.classList.remove(classname);
+}
+
+function YOUTUBE() {
     // AD BLOCKER
     deletePopup("ytd-enforcement-message-view-model");
     deletePopup("tp-yt-iron-overlay-backdrop");
@@ -33,6 +37,28 @@ function supprimerElementAutomatiquement() {
     // USER PRESENCE
     deletePopup("yt-confirm-dialog-renderer");
     deletePopup("tp-yt - paper - dialog");
+}
+
+function MARMITON() {
+    deletePopup("#didomi-popup");
+    removeClass('body', 'didomi-popup-open');
+}
+
+// Fonction pour vérifier et supprimer l'élément
+function supprimerElementAutomatiquement() {
+
+    console.log("EXTENSION !", window.location.hostname);
+
+    switch (window.location.hostname) {
+        case 'www.youtube.com':
+            YOUTUBE();
+            break;
+        case 'www.marmiton.org':
+            MARMITON();
+            break;
+        default:
+            console.log('Auto Hidder: no runned')
+    }
 }
 
 // Vérifier et supprimer l'élément toutes les 1 seconde (ajustable)
