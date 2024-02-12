@@ -9,7 +9,8 @@
         {
             "matches": [
                 "*://*.youtube.com/*",
-                "*://*.marmiton.org/*"
+                "*://*.marmiton.org/*",
+                "*://*.programme-tv.net/*"
             ],
             "js": [
                 "content.js"

@@ -44,6 +44,10 @@ function MARMITON() {
     removeClass('body', 'didomi-popup-open');
 }
 
+function PROGRAMMETV() {
+    deletePopup("#sp_message_container_1020278");
+}
+
 // Fonction pour vérifier et supprimer l'élément
 function supprimerElementAutomatiquement() {
 
@@ -55,6 +59,9 @@ function supprimerElementAutomatiquement() {
             break;
         case 'www.marmiton.org':
             MARMITON();
+            break;
+        case 'www.programme-tv.net':
+            PROGRAMMETV();
             break;
         default:
             console.log('Auto Hidder: no runned')
